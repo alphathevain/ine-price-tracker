@@ -1,10 +1,9 @@
 services:
   - type: web
     name: ine-price-tracker-backend
-    env: node
+    env: docker
+    dockerfilePath: ./Dockerfile
     plan: free
-    buildCommand: npm install && npx playwright install --with-deps chromium
-    startCommand: npm start
     envVars:
       - key: DATABASE_URL
         sync: false
